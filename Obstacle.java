@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Obstacle extends RandomObject
 {
-    public Obstacle(){
-        super();
+    public Obstacle(int speed){
+        super(speed);
     }
 
 }

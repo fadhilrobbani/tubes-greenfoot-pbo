@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boost extends RandomObject
 {
-    public Boost(){
-        super();
+    public Boost(int speed){
+        super(speed);
     }
 }

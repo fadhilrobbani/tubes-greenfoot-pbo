@@ -12,6 +12,9 @@ public class Player extends Actor
     private boolean isHitRock;
     public Player(){
         this.isHitRock =false;
+        GreenfootImage img = this.getImage();
+        img.scale(80,60);
+        this.setImage(img);
     }
     public void act()
     {

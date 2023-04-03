@@ -14,7 +14,7 @@ public class QuestionButton extends Button
      */
     public QuestionButton(){
          GreenfootImage buttonImage = getImage();
-        buttonImage.scale(buttonImage.getWidth() - 300, buttonImage.getHeight() - 300);
+        buttonImage.scale(200, 100);
         setImage(buttonImage);
     }
     public void act()

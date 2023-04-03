@@ -13,8 +13,8 @@ public class PlayButton extends Button
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
    public PlayButton(){
-        GreenfootImage buttonImage = getImage();
-        buttonImage.scale(buttonImage.getWidth() - 200, buttonImage.getHeight() - 200);
+        GreenfootImage buttonImage = this.getImage();
+        buttonImage.scale(200 , 100 );
         setImage(buttonImage);
     }
     public void act()

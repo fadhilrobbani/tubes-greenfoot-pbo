@@ -15,7 +15,7 @@ public class Heart extends Actor
     public void act()
     {
         GreenfootImage img = this.getImage();
-        img.scale(10,10);
+        img.scale(25,25);
         this.setImage(img);
     }
 }

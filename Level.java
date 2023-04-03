@@ -11,6 +11,7 @@ public class Level extends World
     private static Counter scoreCounter = new Counter("Score: ");
     private static Counter crowdCounter = new Counter();
     private static int currentLevel;
+    private static int currentLevelSpeed;
     protected static ArrayList<Heart> heartList = new ArrayList<Heart>();
     /**
      * Constructor for objects of class Level.
@@ -69,6 +70,12 @@ public class Level extends World
     }
     public static int getLengthHeartList(){
         return heartList.size();
+    }
+    public static int getCurrentLevelSpeed(){
+        return currentLevelSpeed;
+    }
+    public static void setCurrentLevelSpeed(int speed){
+        currentLevelSpeed = speed;
     }
     
     

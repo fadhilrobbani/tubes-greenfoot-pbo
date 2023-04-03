@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends Level
 {
-
     /**
      * Constructor for objects of class Level2.
      * 
@@ -19,23 +18,26 @@ public class Level2 extends Level
         super();
         super.reFillHeart();
         super.setCurrentLevel(2);
-        super.setCrowdControl(0);
+        super.setCurrentLevelSpeed(5);
         this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),530,26);
-        this.addObject(super.heartList.get(0),10,10);
-        this.addObject(super.heartList.get(1),30,10);
-        this.addObject(super.heartList.get(2),50,10);
+        this.addObject(heartList.get(0),25,20);
+        this.addObject(heartList.get(1),55,20);
+        this.addObject(heartList.get(2),85,20);
     }
     public void act(){
         super.updateScore(1);   
         super.updateCrowdControl(1);
-        if(super.getCrowdControl() % 25 == 0){
-            generateRandomObject();
-        }
+        generateRandomObject();
     }
     public void generateRandomObject(){
         if(super.getCurrentLevel() == 2){
-            this.addObject(new Obstacle(),798,Greenfoot.getRandomNumber(460));
-            this.addObject(new Boost(),798,Greenfoot.getRandomNumber(460));
+            if(super.getCrowdControl() % 35 == 0){
+                this.addObject(new Obstacle(super.getCurrentLevelSpeed()),798,Greenfoot.getRandomNumber(460)+10);
+            }
+            if(super.getCrowdControl() % 225 == 0){
+                this.addObject(new Boost(super.getCurrentLevelSpeed()),798,Greenfoot.getRandomNumber(460)+10);
+            }
         }
+
     }
 }

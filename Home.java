@@ -33,5 +33,18 @@ public class Home extends World
         playButton.setLocation(423,225);
         QuestionButton questionButton = new QuestionButton();
         addObject(questionButton,714,333);
+        questionButton.setLocation(375,337);
+        playButton.setLocation(359,194);
+        questionButton.setLocation(387,261);
+        questionButton.setLocation(393,270);
+        playButton.setLocation(408,189);
+        questionButton.setLocation(401,261);
+        questionButton.setLocation(430,308);
+        playButton.setLocation(438,197);
+        questionButton.setLocation(396,357);
+        playButton.setLocation(394,241);
+        playButton.setLocation(397,240);
+        questionButton.setLocation(409,350);
+        questionButton.setLocation(374,331);
     }
 }
