@@ -45,7 +45,8 @@ public class Player extends Actor
          if(this.isTouching(Obstacle.class) == true)
        {
            this.removeTouching(Obstacle.class);
-           Heart removedHeart = Level.popHeartList();  
+           Heart removedHeart = Level.popHeartList();
+           this.getWorld().removeObject(removedHeart);
        }
     }
      public boolean getIsHitRock()

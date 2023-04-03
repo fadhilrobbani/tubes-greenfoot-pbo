@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
  * Write a description of class Level1 here.
  * 
@@ -36,5 +37,4 @@ public class Level1 extends Level
             this.addObject(new Boost(),798,Greenfoot.getRandomNumber(460));
         }
     }
-   
 }
