@@ -27,6 +27,7 @@ public class Level extends World
     }
     public static void levelController(){
         if(Level.isGameOver()){
+            Greenfoot.playSound("gameoversound.mp3");
             Greenfoot.setWorld(new GameOver());
         }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 1){
             Greenfoot.setWorld(new Level2());

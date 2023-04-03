@@ -41,6 +41,7 @@ public class Player extends Actor
            this.removeTouching(Obstacle.class);
            Heart removedHeart = Level.popHeartList();
            this.getWorld().removeObject(removedHeart);
+           Greenfoot.playSound("damagesound.mp3");
        }
     }
 }

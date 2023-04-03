@@ -9,10 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RandomObject extends Actor
 {
     private int speed;
-    public RandomObject(int speed){
-        GreenfootImage image = getImage();  
-        image.scale(30, 30);
-        setImage(image);        
+    public RandomObject(int speed){        
         this.speed = speed;
     }
     public void act()

@@ -10,6 +10,9 @@ public class Obstacle extends RandomObject
 {
     public Obstacle(int speed){
         super(speed);
+        GreenfootImage image = getImage();  
+        image.scale(40, 40);
+        setImage(image);
     }
 
 }
