@@ -25,6 +25,17 @@ public class Level extends World
         this.addObject(new Player(),100,100);
         this.addObject(scoreCounter,736,26);
     }
+    public static void levelController(){
+        if(Level.isGameOver()){
+            Greenfoot.setWorld(new GameOver());
+        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 1){
+            Greenfoot.setWorld(new Level2());
+        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 2){
+            Greenfoot.setWorld(new Level3());
+        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 3){
+            Greenfoot.setWorld(new GameWin());
+        }
+    }
     public void reFillHeart(){
         heartList.clear();
         heartList.add(new Heart());

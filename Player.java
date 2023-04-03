@@ -9,9 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private int gravity;
-    private boolean isHitRock;
     public Player(){
-        this.isHitRock =false;
         GreenfootImage img = this.getImage();
         img.scale(80,60);
         this.setImage(img);
@@ -20,15 +18,7 @@ public class Player extends Actor
     {
         doJump(11,1);
         hitRandomObject();
-        if(Level.isGameOver()){
-            Greenfoot.setWorld(new GameOver());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 1){
-            Greenfoot.setWorld(new Level2());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 2){
-            Greenfoot.setWorld(new Level3());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 3){
-            Greenfoot.setWorld(new GameWin());
-        }
+        Level.levelController();
     }
     public void doJump(int jumpValue, int fallValue)
     {
@@ -43,6 +33,7 @@ public class Player extends Actor
         if(this.isTouching(Boost.class) == true)
        {
            Level.updateScore(10);
+            Greenfoot.playSound("getboost.mp3");
            this.removeTouching(Boost.class);           
         }
          if(this.isTouching(Obstacle.class) == true)
@@ -52,13 +43,4 @@ public class Player extends Actor
            this.getWorld().removeObject(removedHeart);
        }
     }
-     public boolean getIsHitRock()
-    {
-         return this.isHitRock;
-    }
-    public void setIsHitRock(boolean value)
-    {
-        this.isHitRock = value;
-    }
-    
 }
