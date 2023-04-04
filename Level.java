@@ -12,7 +12,7 @@ public class Level extends World
     private static Counter timerCounter = new Counter("Time Left: ");
     private static Counter crowdCounter = new Counter();
     private static int currentLevel;
-    protected static GreenfootSound levelSong = new GreenfootSound("levelsong.mp3");
+    public static GreenfootSound levelSong = new GreenfootSound("levelsong.mp3");
     private static SimpleTimer simpleTimer = new SimpleTimer();
     private static int currentLevelSpeed;
     protected static ArrayList<Heart> heartList = new ArrayList<Heart>();
