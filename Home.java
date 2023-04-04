@@ -18,6 +18,9 @@ public class Home extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 460, 1); 
         prepare();
+        if(Level.levelSong.isPlaying()){
+            Level.levelSong.stop();
+        }
     }
     
     /**

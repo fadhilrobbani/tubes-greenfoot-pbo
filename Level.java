@@ -9,8 +9,11 @@ import java.util.ArrayList;
 public class Level extends World
 {
     private static Counter scoreCounter = new Counter("Score: ");
+    private static Counter timerCounter = new Counter("Time Left: ");
     private static Counter crowdCounter = new Counter();
     private static int currentLevel;
+    protected static GreenfootSound levelSong = new GreenfootSound("levelsong.mp3");
+    private static SimpleTimer simpleTimer = new SimpleTimer();
     private static int currentLevelSpeed;
     protected static ArrayList<Heart> heartList = new ArrayList<Heart>();
     /**
@@ -21,9 +24,10 @@ public class Level extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 460, 1); 
-        scoreCounter.setValue(0);
         this.addObject(new Player(),100,100);
+        this.addObject(timerCounter,600,26);
         this.addObject(scoreCounter,736,26);
+        
     }
     public static void levelController(){
         if(Level.isGameOver()){
@@ -35,6 +39,25 @@ public class Level extends World
             Greenfoot.setWorld(new Level3());
         }else if(Level.getScore() >= 600 && Level.getCurrentLevel() == 3){
             Greenfoot.setWorld(new GameWin());
+        }
+    }
+     public static void levelController2(){
+        if(Level.isGameOver()){
+            Level.levelSong.stop();
+            Greenfoot.playSound("gameoversound.mp3");
+            Greenfoot.setWorld(new GameOver());
+        }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 1){
+            Greenfoot.setWorld(new Level2());
+        }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 2){
+            Greenfoot.setWorld(new Level3());
+        }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 3){
+            Greenfoot.setWorld(new GameWin());
+        }
+    }
+    public static void countDown(){
+        if(timerCounter.getValue() > 0 && simpleTimer.millisElapsed()>1000){
+            simpleTimer.mark();
+            timerCounter.add(-1);
         }
     }
     public void reFillHeart(){
@@ -54,6 +77,15 @@ public class Level extends World
     }
     public static int getScore(){
         return scoreCounter.getValue();
+    }
+    public static void updateSimpleTimer(int value){
+        timerCounter.add(value);
+    }
+    public static void setSimpleTimer(int value){
+        timerCounter.setValue(value);
+    }
+    public static int getSimpleTimer(){
+        return timerCounter.getValue();
     }
     public static void setCurrentLevel(int level){
         Level.currentLevel = level;

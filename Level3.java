@@ -18,14 +18,16 @@ public class Level3 extends Level
         super();
         super.reFillHeart();
         super.setCurrentLevel(3);
+        super.setSimpleTimer(16);
         super.setCurrentLevelSpeed(6);
-        this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),530,26);
+        this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),430,26);
         this.addObject(heartList.get(0),25,20);
         this.addObject(heartList.get(1),55,20);
         this.addObject(heartList.get(2),85,20);
     }
     public void act(){
-        super.updateScore(1);   
+        super.updateScore(1); 
+        super.countDown();
         super.updateCrowdControl(4);
         generateRandomObject();
     }

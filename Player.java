@@ -18,7 +18,7 @@ public class Player extends Actor
     {
         doJump(11,1);
         hitRandomObject();
-        Level.levelController();
+        Level.levelController2();
     }
     public void doJump(int jumpValue, int fallValue)
     {
@@ -31,7 +31,7 @@ public class Player extends Actor
     }
     public void hitRandomObject(){
         if(this.isTouching(Boost.class) == true){
-           Level.updateScore(10);
+           Level.updateScore(50);
             Greenfoot.playSound("getboost.mp3");
            this.removeTouching(Boost.class);           
         }
