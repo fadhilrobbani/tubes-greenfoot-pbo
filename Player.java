@@ -30,15 +30,19 @@ public class Player extends Actor
         }
     }
     public void hitRandomObject(){
-        if(this.isTouching(Boost.class) == true)
-       {
+        if(this.isTouching(Boost.class) == true){
            Level.updateScore(10);
             Greenfoot.playSound("getboost.mp3");
            this.removeTouching(Boost.class);           
         }
-         if(this.isTouching(Obstacle.class) == true)
-       {
+        if(this.isTouching(Obstacle.class) == true){
            this.removeTouching(Obstacle.class);
+           Heart removedHeart = Level.popHeartList();
+           this.getWorld().removeObject(removedHeart);
+           Greenfoot.playSound("damagesound.mp3");
+       }
+        if(this.isTouching(Obstacle2.class) == true){
+           this.removeTouching(Obstacle2.class);
            Heart removedHeart = Level.popHeartList();
            this.getWorld().removeObject(removedHeart);
            Greenfoot.playSound("damagesound.mp3");

@@ -17,11 +17,12 @@ public class Level1 extends Level
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super();
         super.reFillHeart();
-        super.setCurrentLevelSpeed(4);
+        super.setCurrentLevelSpeed(5);
         this.addObject(heartList.get(0),25,20);
         this.addObject(heartList.get(1),55,20);
         this.addObject(heartList.get(2),85,20);
         super.setCurrentLevel(1);
+        Greenfoot.playSound("levelsong.mp3");
         this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),530,26);
     }
     public void act(){

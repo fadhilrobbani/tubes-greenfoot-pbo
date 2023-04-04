@@ -18,7 +18,7 @@ public class Level2 extends Level
         super();
         super.reFillHeart();
         super.setCurrentLevel(2);
-        super.setCurrentLevelSpeed(5);
+        super.setCurrentLevelSpeed(7);
         this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),530,26);
         this.addObject(heartList.get(0),25,20);
         this.addObject(heartList.get(1),55,20);
@@ -31,12 +31,16 @@ public class Level2 extends Level
     }
     public void generateRandomObject(){
         if(super.getCurrentLevel() == 2){
-            if(super.getCrowdControl() % 35 == 0){
+            if(super.getCrowdControl() % 55 == 0){
                 this.addObject(new Obstacle(super.getCurrentLevelSpeed()),798,Greenfoot.getRandomNumber(460)+10);
+            }
+            if(super.getCrowdControl() % 70 == 0){
+                this.addObject(new Obstacle2(12),798,Greenfoot.getRandomNumber(460)+10);
             }
             if(super.getCrowdControl() % 225 == 0){
                 this.addObject(new Boost(super.getCurrentLevelSpeed()),798,Greenfoot.getRandomNumber(460)+10);
             }
+
         }
 
     }

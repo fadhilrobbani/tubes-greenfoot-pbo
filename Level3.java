@@ -31,7 +31,7 @@ public class Level3 extends Level
     }
     public void generateRandomObject(){
         if(super.getCurrentLevel() == 3){
-            if(super.getCrowdControl() % 30 == 0){
+            if(super.getCrowdControl() % 35 == 0){
                 this.addObject(new Obstacle(super.getCurrentLevelSpeed()),798,Greenfoot.getRandomNumber(460)+10);
             }
             if(super.getCrowdControl() % 225 == 0){

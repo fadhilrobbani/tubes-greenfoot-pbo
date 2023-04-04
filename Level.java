@@ -29,11 +29,11 @@ public class Level extends World
         if(Level.isGameOver()){
             Greenfoot.playSound("gameoversound.mp3");
             Greenfoot.setWorld(new GameOver());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 1){
+        }else if(Level.getScore() >= 600 && Level.getCurrentLevel() == 1){
             Greenfoot.setWorld(new Level2());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 2){
+        }else if(Level.getScore() >= 600 && Level.getCurrentLevel() == 2){
             Greenfoot.setWorld(new Level3());
-        }else if(Level.getScore() >= 500 && Level.getCurrentLevel() == 3){
+        }else if(Level.getScore() >= 600 && Level.getCurrentLevel() == 3){
             Greenfoot.setWorld(new GameWin());
         }
     }
