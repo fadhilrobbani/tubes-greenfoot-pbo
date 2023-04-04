@@ -18,7 +18,7 @@ public class Player extends Actor
     {
         doJump(11,1);
         hitRandomObject();
-        Level.levelController2();
+        Level.levelController();
     }
     public void doJump(int jumpValue, int fallValue)
     {

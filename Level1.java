@@ -17,15 +17,20 @@ public class Level1 extends Level
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super();
         super.reFillHeart();
-        super.setSimpleTimer(16);
+        super.setSimpleTimer(17);
         super.setScore(0);
         super.setCurrentLevelSpeed(5);
         this.addObject(heartList.get(0),25,20);
         this.addObject(heartList.get(1),55,20);
         this.addObject(heartList.get(2),85,20);
         super.setCurrentLevel(1);
+        if(Home.backgroundSong.isPlaying()){
+            Home.backgroundSong.stop();
+        }
         if(!super.levelSong.isPlaying()){
+            super.levelSong.setVolume(30);
             super.levelSong.play();
+
         }
         this.addObject(new Label(("Level: "+super.getCurrentLevel()),30),430,26);
     }

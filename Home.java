@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Home extends World
 {
-
+    public static GreenfootSound backgroundSong = new GreenfootSound("backgroundsong.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,6 +21,8 @@ public class Home extends World
         if(Level.levelSong.isPlaying()){
             Level.levelSong.stop();
         }
+        //Greenfoot.playSound("backgroundsong.mp3");
+        
     }
     
     /**
