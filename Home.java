@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Home extends World
 {
     public static GreenfootSound backgroundSong = new GreenfootSound("backgroundsong.mp3");
-    public static boolean isStarted = false;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,23 +19,16 @@ public class Home extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 460, 1); 
         prepare();
-        
-        if(isStarted && !backgroundSong.isPlaying()){
-            backgroundSong.play();
-        }   
-    }
-
-    public void started(){
-        isStarted = true;
         if(Level.levelSong.isPlaying()){
             Level.levelSong.stop();
         }
-        if(!backgroundSong.isPlaying()){
-            backgroundSong.play();
-        }
+        if(backgroundSong.isPlaying()){
+            backgroundSong.stop();
+        }  
     }
-    public void stopped(){
-        isStarted = false;
+
+    public void started(){
+        backgroundSong.play();
     }
     private void prepare()
     {

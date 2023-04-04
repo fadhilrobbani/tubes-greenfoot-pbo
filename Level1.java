@@ -27,6 +27,9 @@ public class Level1 extends Level
         if(Home.backgroundSong.isPlaying()){
             Home.backgroundSong.stop();
         }
+        if(super.levelSong.isPlaying()){
+            super.levelSong.stop();
+        }
         if(!super.levelSong.isPlaying()){
             super.levelSong.setVolume(50);
             super.levelSong.play();
