@@ -19,5 +19,6 @@ public class GameWin extends World
         super(800, 460, 1); 
         this.addObject(new HomeButton(),357,409);
         this.addObject(new ReplayButton(),454,409);
+        this.addObject(new Label(("Score: "+Level.getScore()),50),430,26);
     }
 }

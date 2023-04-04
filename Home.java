@@ -26,7 +26,7 @@ public class Home extends World
             backgroundSong.stop();
         }  
     }
-
+    
     public void started(){
         backgroundSong.play();
     }
