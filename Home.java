@@ -22,13 +22,6 @@ public class Home extends World
         if(Level.levelSong.isPlaying()){
             Level.levelSong.stop();
         }
-        if(backgroundSong.isPlaying()){
-            backgroundSong.stop();
-        }  
-    }
-    
-    public void started(){
-        backgroundSong.play();
     }
     private void prepare()
     {

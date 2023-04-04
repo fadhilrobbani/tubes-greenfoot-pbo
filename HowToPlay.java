@@ -16,6 +16,7 @@ public class HowToPlay extends World
     public HowToPlay()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 460, 1); 
+        this.addObject(new HomeButton(),400,409);
     }
 }

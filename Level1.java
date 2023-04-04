@@ -24,9 +24,6 @@ public class Level1 extends Level
         this.addObject(heartList.get(1),55,20);
         this.addObject(heartList.get(2),85,20);
         super.setCurrentLevel(1);
-        if(Home.backgroundSong.isPlaying()){
-            Home.backgroundSong.stop();
-        }
         if(super.levelSong.isPlaying()){
             super.levelSong.stop();
         }
