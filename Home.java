@@ -23,6 +23,7 @@ public class Home extends World
             Level.levelSong.stop();
         }
     }
+    
     private void prepare()
     {
         PlayButton playButton = new PlayButton();
