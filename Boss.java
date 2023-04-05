@@ -41,6 +41,9 @@ public class Boss extends Actor
         if(getY() <= 8 || getY() >= getWorld().getHeight()-8){
             turn(180);
         }
+        if(getY() < 50 && getX()>750){
+            setLocation(700,200);
+        }
     }
     public void randomShoot(){
         this.getWorld().addObject(new Obstacle(6),this.getX(),this.getY());
