@@ -39,6 +39,10 @@ public class Level extends World
         }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 2){
             Greenfoot.setWorld(new Level3());
         }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 3){
+            Greenfoot.setWorld(new Level4());
+        }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 4){
+            Greenfoot.setWorld(new Level5());
+        }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 5){
             Greenfoot.setWorld(new GameWin());
         }
     }

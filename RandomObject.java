@@ -14,7 +14,7 @@ public class RandomObject extends Actor
     }
     public void act()
     {
-        if(this.getX() < 25)
+        if(this.getX() == 0)
         {
             this.destroyObject();
         }

@@ -12,6 +12,7 @@ public class Boss extends Actor
      * Act - do whatever the Boss wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public SimpleTimer shootTimer = new SimpleTimer();
     public Boss(){
         GreenfootImage img = this.getImage();
         img.scale(200,200);
@@ -19,8 +20,29 @@ public class Boss extends Actor
     }
     public void act()
     {
-         if(this.getX() > 615){
-             setLocation(this.getX() - 4, this.getY());
-         }
+         //if(this.getX() > 615){
+          //   setLocation(this.getX() - 4, this.getY());
+         //}
+         moveAround();
+         if(shootTimer.millisElapsed()>530){
+            shootTimer.mark();
+            randomShoot();
+        }
+         
+    }
+    public void moveAround(){
+        move(10);
+        if(Greenfoot.getRandomNumber(100) <10){
+            turn(Greenfoot.getRandomNumber(90) - 45);
+        }
+        if(getX() <= 360 || getX() >= getWorld().getWidth()-80){
+            turn(180);
+        }
+        if(getY() <= 8 || getY() >= getWorld().getHeight()-8){
+            turn(180);
+        }
+    }
+    public void randomShoot(){
+        this.getWorld().addObject(new Obstacle(6),this.getX(),this.getY());
     }
 }

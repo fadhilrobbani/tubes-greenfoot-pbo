@@ -17,7 +17,7 @@ public class Player extends Actor
     public void act()
     {
         doJump(11,1);
-        hitRandomObject();
+        //hitRandomObject();
         Level.levelController();
     }
     public void doJump(int jumpValue, int fallValue)
@@ -43,6 +43,12 @@ public class Player extends Actor
        }
         if(this.isTouching(Obstacle2.class) == true){
            this.removeTouching(Obstacle2.class);
+           Heart removedHeart = Level.popHeartList();
+           this.getWorld().removeObject(removedHeart);
+           Greenfoot.playSound("damagesound.mp3");
+       }
+        if(this.isTouching(Obstacle3.class) == true){
+           this.removeTouching(Obstacle3.class);
            Heart removedHeart = Level.popHeartList();
            this.getWorld().removeObject(removedHeart);
            Greenfoot.playSound("damagesound.mp3");
