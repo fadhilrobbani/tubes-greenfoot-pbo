@@ -11,7 +11,9 @@ public class Level extends World
     private static Counter scoreCounter = new Counter("Score: ");
     private static Counter timerCounter = new Counter("Time Left: ");
     private static Counter crowdCounter = new Counter();
+    private static int highScore;
     private static int currentLevel;
+    private static int countGameFinished;
     public static GreenfootSound levelSong = new GreenfootSound("levelsong.mp3");
     private static SimpleTimer simpleTimer = new SimpleTimer();
     private static int currentLevelSpeed;
@@ -44,6 +46,7 @@ public class Level extends World
             Greenfoot.setWorld(new Level5());
         }else if(Level.timerCounter.getValue() == 0 && Level.getCurrentLevel() == 5){
             Greenfoot.setWorld(new GameWin());
+            countGameFinished++;
         }
     }
     public static void countDown(){
@@ -60,6 +63,11 @@ public class Level extends World
     }
     public static boolean isGameOver(){
         return heartList.size() - 1 < 0;
+    }
+    public static int getHighScore(){
+        int newHighScore = scoreCounter.getValue() > highScore ? scoreCounter.getValue() : highScore;
+        highScore = newHighScore;
+        return highScore;
     }
     public static void updateScore(int value){
             int currentScore = scoreCounter.getValue();
@@ -85,6 +93,9 @@ public class Level extends World
     }
     public static int getCurrentLevel(){
         return Level.currentLevel;
+    }
+    public static int getCountGameFinished(){
+        return Level.countGameFinished;
     }
     public static void updateCrowdControl(int value){
         crowdCounter.add(value);

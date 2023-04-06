@@ -18,6 +18,8 @@ public class Home extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 460, 1); 
+        this.addObject(new Label(("High Score: "+ Level.getHighScore()),30),650,430);
+        this.addObject(new Label(("Finished: "+ Level.getCountGameFinished()),30),150,430);
         prepare();
         if(Level.levelSong.isPlaying()){
             Level.levelSong.stop();
