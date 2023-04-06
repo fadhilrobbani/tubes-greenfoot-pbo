@@ -36,7 +36,7 @@ public class Level1 extends Level
     }
     public void act(){
         super.updateScore(1);   
-        super.countDown();
+        super.countDown(); 
         super.updateCrowdControl(1);
         generateRandomObject();
     }

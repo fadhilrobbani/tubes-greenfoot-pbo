@@ -62,7 +62,8 @@ public class Level extends World
         return heartList.size() - 1 < 0;
     }
     public static void updateScore(int value){
-        scoreCounter.add(value);
+            int currentScore = scoreCounter.getValue();
+            scoreCounter.setValue(currentScore + value);
     }
     public static void setScore(int value){
         scoreCounter.setValue(value);

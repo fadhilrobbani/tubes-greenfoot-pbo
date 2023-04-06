@@ -31,7 +31,7 @@ public class Player extends Actor
     }
     public void hitRandomObject(){
         if(this.isTouching(Boost.class) == true){
-           Level.updateScore(50);
+           Level.updateScore(1000);
             Greenfoot.playSound("getboost.mp3");
            this.removeTouching(Boost.class);           
         }
